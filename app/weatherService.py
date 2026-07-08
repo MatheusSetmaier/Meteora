@@ -48,11 +48,41 @@ def get_weather(cidade: str):
         'temperatura': dados['currentConditions']['temp'],
         'sensacao_termica': dados['currentConditions']['feelslike'],
         'umidade': dados['currentConditions']['humidity'],
+        'vento': dados['currentConditions']['windspeed'],
+        'pressao': dados['currentConditions']['pressure'],
+        'visibilidade': dados['currentConditions']['visibility'],
         'condicao': traducao.get(
             dados['currentConditions']['conditions'],
             dados['currentConditions']['conditions']
-        )
-    }
+    ),
+
+    'previsao_horaria': [
+        {
+            'hora': hora['datetime'][:5],
+            'temperatura': hora['temp'],
+            'condicao': traducao.get(
+                hora['conditions'],
+                hora['conditions']
+            )
+        }
+
+        for hora in dados['days'][0]['hours']
+
+    ],
+
+    'previsao_5_dias': [
+        {
+            'data': dia['datetime'],
+            'temp_max': dia['tempmax'],
+            'temp_min': dia['tempmin'],
+            'condicao': traducao.get(
+                dia['conditions'],
+                dia['conditions']
+            )
+        }
+        for dia in dados['days'][:5]
+    ]
+}
 
     redis_client.set(
         cidade,

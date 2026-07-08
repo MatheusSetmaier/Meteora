@@ -4,7 +4,7 @@
 <head>
 
     <meta charset = 'UTF-8'>
-    <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'>
+    <meta name = 'viewport' content = 'width=device-width, initial-scale = 1.0'>
 
     <title>Meteora</title>
 
@@ -16,41 +16,161 @@
 
 <body>
 
-<div class = 'container'>
+<div class = 'page'>
 
-    <h1>Meteora</h1>
+    <header>
 
-    <div class = 'search'>
+        <div class = 'logo'>
 
-        <input
-            type = 'text'
-            id = 'cidade'
-            placeholder = 'Digite uma cidade'>
-
-        <button onclick = 'buscarClima()'>
-            Buscar
-        </button>
-
-    </div>
-
-    <div id = 'resultado'>
-
-        <div class = 'placeholder'>
-
-            <div class = 'emoji'>🌤️</div>
-
-            <p>
-                Pesquise uma cidade para visualizar
-                as informações meteorológicas.
-            </p>
+            🌤️ <span>Meteora</span>
 
         </div>
 
-    </div>
+        <div class = 'search'>
+
+            <input
+                type = 'text'
+                id = 'cidade'
+                placeholder = 'Buscar cidade...''>
+
+            <button onclick = 'buscarClima()''>
+
+                Buscar
+
+            </button>
+
+        </div>
+
+        <div class = 'update'>
+
+            Última atualização
+
+            <span id = 'horaAtual'>
+
+                --
+
+            </span>
+
+        </div>
+
+    </header>
+
+    <section class = 'hero'>
+
+        <div class = 'hero-left'>
+
+            <h2 id = 'cidadeNome'>
+
+                Pesquise uma cidade
+
+            </h2>
+
+            <div class = 'temperature'>
+
+                <span id = 'temperatura'>
+
+                    --
+
+                </span>
+
+                <span class = 'icon' id = 'iconeClima'>
+
+                    ☀️
+
+                </span>
+
+            </div>
+
+            <h3 id = 'condicao'>
+
+                Aguardando pesquisa...
+
+            </h3>
+
+            <p id = 'sensacao'>
+
+                Sensação térmica --
+
+            </p>
+
+            <div class = 'miniCards'>
+
+                <div class = 'miniCard'>
+
+                    <span>Umidade</span>
+
+                    <strong id = 'umidade'>
+
+                        --
+
+                    </strong>
+
+                </div>
+
+                <div class = 'miniCard'>
+
+                    <span>Vento</span>
+
+                    <strong id = 'vento'>
+
+                        --
+
+                    </strong>
+
+                </div>
+
+                <div class = 'miniCard'>
+
+                    <span>Pressão</span>
+
+                    <strong id = 'pressao'>
+
+                        --
+
+                    </strong>
+
+                </div>
+
+                <div class = 'miniCard'>
+
+                    <span>Visibilidade</span>
+
+                    <strong id = 'visibilidade'>
+
+                        --
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class = 'bottom'>
+
+        <div class = 'card'>
+
+            <h2>Previsão por hora</h2>
+
+            <div id = 'previsaoHora' class = 'forecast-hour'>
+
+                --
+
+            </div>
+
+            <canvas id = 'graficoTemperatura'></canvas>
+
+        </div>
+
+    </section>
 
 </div>
 
-<script src = '/static/script.js'></script>
+<script src = 'https://cdn.jsdelivr.net/npm/chart.js'></script>
+<script src = "/static/script.js"></script>
 
 </body>
 
