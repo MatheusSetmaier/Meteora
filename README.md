@@ -24,7 +24,7 @@ Tecnologias
 
 Demonstração
 
-https://meteoraapi-6dso.onrender.com
+https://meteoraapi-0tct.onrender.com
 
 Pré-requisitos
 
