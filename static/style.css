@@ -54,7 +54,7 @@ header{
 }
 
 .search input::placeholder{
-    color:white;
+    color:rgba(255,255,255,.8);
 }
 
 .search button{
@@ -90,10 +90,6 @@ header{
     margin-bottom:5px;
 }
 
-.hero-left p{
-    color:white;
-}
-
 .temperature{
     display:flex;
     align-items:center;
@@ -112,10 +108,6 @@ header{
 
 #condicao{
     margin-bottom:6px;
-}
-
-#sensacao{
-    color:white;
 }
 
 .miniCards{
@@ -202,41 +194,94 @@ header{
     max-height:150px;
 }
 
-#resultado{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
+@media (max-width: 768px){
+    body{
+        overflow-x:hidden;
+    }
 
-#resultado p{
-    padding-bottom:10px;
-    border-bottom:1px solid rgba(255,255,255,.15);
-    color:white;
-}
+    .page{
+        width:375px;
+        margin:25px auto;
+    }
 
-#resultado strong{
-    color:white;
-}
+    header{
+        flex-direction:column;
+        align-items:stretch;
+        gap:18px;
+    }
 
-#previsaoDias{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
+    .logo{
+        text-align:center;
+        font-size:28px;
+    }
 
-.day{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(255,255,255,.10);
-    border-radius:16px;
-    padding:14px;
-}
+    .update{
+        text-align:center;
+    }
 
-.day strong{
-    color:white;
-}
+    .search{
+        text-align:center
+    }
 
-.day span{
-    color:white;
+    .search input{
+        text-align:center;
+    }
+
+    .search button{
+        text-align:center;
+    }
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero-left h2{
+        text-align:center;
+    }
+
+    #temperatura{
+        text-align:center;
+    }
+
+    .temperature{
+        justify-content:center;
+    }
+
+    .icon{
+        font-size:52px;
+    }
+
+    .miniCards{
+        grid-template-columns:repeat(2,2fr);
+        gap:12px;
+    }
+
+    .miniCard{
+        padding:12px;
+    }
+
+    .miniCard strong{
+        font-size:12px;
+    }
+
+    .bottom{
+        display:block;
+    }
+
+    .card{
+        height:auto;
+    }
+
+    .forecast-hour{
+        gap:10px;
+    }
+
+    .hour-card{
+        min-width:72px;
+    }
+
+    #graficoTemperatura{
+        height:220px !important;
+    }
+
 }
