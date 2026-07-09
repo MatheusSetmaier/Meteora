@@ -194,7 +194,7 @@ header{
     max-height:150px;
 }
 
-@media (max-width: 768px){
+@media screen and (max-width: 768px){
     body{
         overflow-x:hidden;
     }
