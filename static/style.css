@@ -194,7 +194,7 @@ header{
     max-height:150px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1415px){
     body{
         overflow-x:hidden;
     }
@@ -252,8 +252,8 @@ header{
     }
 
     .miniCards{
-        grid-template-columns:repeat(2,2fr);
-        gap:12px;
+        grid-template-columns:repeat(2,1fr);
+        gap:16px;
     }
 
     .miniCard{
